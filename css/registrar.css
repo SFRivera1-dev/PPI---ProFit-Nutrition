@@ -1,0 +1,119 @@
+body{
+    background-color: #171715;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+}
+
+section{
+    background-color: #292925;
+    border-radius: 10px;
+    width: 400px;
+    padding: 30px;
+    text-align: center;
+}
+
+section img{
+    width: auto;
+    height: 70px;
+}
+
+section p{
+    color: #c2c1c7;
+    margin: 10px 0 25px 0;
+}
+
+section form{
+    display: flex;
+    flex-direction: column;
+}
+
+section form .contenedor{
+    display: flex;
+    gap: 20px;
+}
+
+section form .box-input{
+    flex: 1;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+section form .box-input label{
+    color: #c2c1c7;
+
+}
+
+section .input-wrap{
+    position: relative;
+    width: 100%;
+}
+
+section .input-wrap input{
+    width: 100%;
+    font-size: 15px;
+    color: #c2c1c7;
+    border-radius: 10px;
+    padding: 10px 45px 10px 15px;
+    background-color: #1f221d;
+    border: .1px solid #c2c1c7;
+    font-size: 14px;
+    outline: none;
+}
+
+section .input-wrap button{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: #c2c1c7;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+section form a{
+    text-align: end;
+    color: #efb810;
+    text-decoration: none;
+}
+
+section form a:hover{
+    text-decoration: underline;
+}
+
+section form .btn-acceso{
+    background-color: #efb810;
+    padding: 10px;
+    font-size: 18px;
+    color: #292925;
+    border: none;
+    border-radius: 10px;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+
+
+/* ---------- Mensajes de error / éxito ---------- */
+.alerta{
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.alerta-error{
+    background-color: rgba(224, 122, 95, .12);
+    border: 1px solid rgba(224, 122, 95, .5);
+    color: #f2b9a8;
+}
+
+.alerta-ok{
+    background-color: rgba(127, 184, 138, .12);
+    border: 1px solid rgba(127, 184, 138, .5);
+    color: #b6dcbd;
+}

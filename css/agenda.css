@@ -1,0 +1,367 @@
+.agenda-section{
+padding: 30px 15px;
+text-align: center;
+background-color: #171715;;
+}
+
+.agenda-section article h2{
+color: #dfedef;
+font-weight: 500;
+}
+
+.agenda-section article p{
+font-size: 17px;
+color: #c2c1c7;
+}
+
+.agenda-section section form{
+display: flex;
+justify-content: center;
+flex-wrap: nowrap;
+}
+
+.agenda-section section .contenedores-menu{
+width: 375px;
+height: auto;
+padding: 10px 40px;
+display: flex;
+flex-direction: column;
+}
+
+.agenda-section section .contenedores-menu span{
+text-align: start;
+margin: 20px 0;
+color: #dfedef;
+}
+
+.agenda-section section .contenedores-menu .tipos-servicio{
+max-height: 200px;
+overflow-y: auto;
+padding: 2px;
+}
+
+.agenda-section section .contenedores-menu .tipos-servicio::-webkit-scrollbar{
+width: 10px;
+}
+
+.agenda-section section .contenedores-menu .tipos-servicio::-webkit-scrollbar-track{
+background-color: #26261f;
+}
+
+.agenda-section section .contenedores-menu .tipos-servicio::-webkit-scrollbar-thumb{
+background-color: #c2c1c7;
+border-radius: 10px;
+}
+
+.agenda-section section .contenedores-menu .tipos-servicio::-webkit-scrollbar-thumb:hover{
+background-color: #c2c1c7;
+border: 1px solid #26261f;
+}
+
+.agenda-section section .contenedores-menu .servicio{
+color: #c2c1c7;
+background-color: #1f221d;
+margin-bottom: 10px;
+gap: 20px;
+width: 98%;
+padding: 20px;
+display: flex;
+align-items: center;
+font-size: 18px;
+border-radius: 10px;
+border: .5px solid #c2c1c7;
+transition: border 0.3s ease;
+transition: color 0.3s ease;
+cursor: pointer;
+}
+
+.agenda-section section .contenedores-menu input[type="radio"]{
+position: absolute;
+opacity: 0;
+}
+
+.agenda-section section .contenedores-menu input[type="radio"]:checked + .servicio{
+border: 1px solid #efb810;
+color: #efb810;
+background-color: #362c0f;
+}
+
+.agenda-section section .contenedores-menu .info-servicios{
+margin-top: 25px;
+line-height: 1;
+color: #dfedef;
+}
+
+.agenda-section section .contenedores-menu .objetivo-datos,
+.agenda-section section .contenedores-menu .nivel-datos{
+margin-bottom: 10px;
+padding: 10px;
+font-size: 18px;
+border-radius: 10px;
+border: 1px solid #c2c1c7;
+color: #c2c1c7;
+background-color: #1f221d;
+}
+
+.agenda-section section .contenedores-menu .objetivo-datos:valid,
+.agenda-section section .contenedores-menu .nivel-datos:valid{
+color: #efb810;
+border: 1px solid #efb810;
+background-color: #362c0f;
+}
+
+
+.agenda-section .contenedores-menu .fecha-cita::-webkit-calendar-picker-indicator{
+    filter: invert(1);
+}
+
+.agenda-section .contenedores-menu .fecha-cita,
+.agenda-section .contenedores-menu .hora-cita{
+font-size: 18px;
+padding: 10px 20px 10px 10px;
+margin-bottom: 10px;
+border-radius: 10px;
+background-color: #1f221d;
+border: 1px solid #c2c1c7;
+color: #c2c1c7;
+}
+
+.agenda-section .contenedores-menu .fecha-cita:valid,
+.agenda-section .contenedores-menu .hora-cita:valid{
+border: 1px solid #efb810;
+background-color: #362c0f;
+color: #efb810;
+}
+
+.agenda-section .contenedores-menu .entorno{
+padding: 10px;
+font-size: 18px;
+color: #efb810;
+border: 1px solid #efb810;
+border-radius: 10px;
+background-color: #362c0f;
+}
+
+.agenda-section .contenedores-menu .confirmar-cita{
+padding: 10px;
+font-size: 18px;
+border: none;
+border-radius: 10px;
+background-color: #efb810;
+color: #171715;
+transition: color 0.3s ease;
+cursor: pointer;
+}
+
+
+@media (max-width: 715px){
+
+    .agenda-section{
+        padding: 30px 15px;
+    }
+
+    .agenda-section section form{
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .agenda-section section .contenedores-menu{
+        width: 100%;
+        max-width: 450px;
+    }
+
+
+}
+
+
+/* =====================================================================
+   Aviso de cita activa, errores, nota de horas y ventana de confirmación
+   ===================================================================== */
+.agenda-aviso{
+    max-width: 640px;
+    margin: 24px auto 0;
+    padding: 18px 22px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    text-align: left;
+    background-color: #362c0f;
+    border: 1px solid #efb810;
+    border-radius: 12px;
+    color: #dfedef;
+}
+
+.agenda-aviso[hidden]{
+    display: none;
+}
+
+.agenda-aviso > i{
+    color: #efb810;
+    font-size: 24px;
+    margin-top: 2px;
+}
+
+.agenda-aviso strong{
+    color: #efb810;
+    font-weight: 300;
+    font-size: 17px;
+}
+
+.agenda-aviso p{
+    margin: 6px 0 0;
+    font-size: 15px;
+    color: #dfedef;
+}
+
+.agenda-aviso__enlace{
+    display: inline-block;
+    margin-top: 12px;
+    color: #efb810;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.agenda-alerta{
+    max-width: 640px;
+    margin: 20px auto 0;
+    padding: 12px 18px;
+    text-align: left;
+    font-size: 15px;
+    color: #f2b9a8;
+    border-radius: 10px;
+}
+
+.agenda-alerta[hidden]{
+    display: none;
+}
+
+.agenda-section section form.bloqueado .contenedores-menu{
+    opacity: .45;
+}
+
+.agenda-section section form.bloqueado .servicio,
+.agenda-section section form.bloqueado .confirmar-cita{
+    cursor: not-allowed;
+}
+
+.agenda-section .contenedores-menu .hora-cita option:disabled{
+    color: #77777d;
+}
+
+.agenda-section .contenedores-menu .agenda-nota{
+    margin: 0;
+    min-height: 0;
+    font-size: 14px;
+    text-align: start;
+    color: #efb810;
+}
+
+.agenda-section .contenedores-menu .agenda-nota:empty{
+    display: none;
+}
+
+.agenda-section .contenedores-menu .confirmar-cita:disabled{
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+/* Ventana "Tu cita está pendiente" */
+.agenda-modal{
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(0,0,0,.75);
+}
+
+.agenda-modal[hidden]{
+    display: none;
+}
+
+.agenda-modal__caja{
+    width: 100%;
+    max-width: 460px;
+    padding: 36px 30px 28px;
+    text-align: center;
+    background-color: #292925;
+    border: 1px solid #34342f;
+    border-radius: 16px;
+    color: #dfedef;
+}
+
+.agenda-modal__icono{
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background-color: #efb810;
+    color: #171715;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agenda-modal__caja h2{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.agenda-modal__caja p{
+    font-size: 16px;
+    line-height: 1.5;
+    color: #c2c1c7;
+    margin: 0 0 8px;
+}
+
+.agenda-modal__caja .agenda-modal__resumen{
+    color: #efb810;
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.agenda-modal__caja .agenda-modal__gracias{
+    color: #dfedef;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.agenda-modal__botones{
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+.agenda-modal__principal,
+.agenda-modal__secundario{
+    padding: 11px 24px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.agenda-modal__principal{
+    border: none;
+    background-color: #efb810;
+    color: #171715;
+    font-weight: 600;
+}
+
+.agenda-modal__secundario{
+    border: 1px solid #c2c1c7;
+    background: transparent;
+    color: #dfedef;
+}
+
+.agenda-modal__secundario:hover{
+    border-color: #efb810;
+    color: #efb810;
+}

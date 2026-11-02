@@ -1,0 +1,2 @@
+# Apache a veces no le pasa a PHP la cabecera "Authorization". Esta línea la copia.
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1

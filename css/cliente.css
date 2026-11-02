@@ -1,0 +1,307 @@
+/* Panel del cliente: "Tu cuenta" (estilo Amazon, tema ProFit) */
+.cuenta-body{
+    background-color: #171715;
+    color: #f3f2ee;
+    min-height: 100vh;
+}
+
+.cuenta{
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 36px 24px 60px;
+}
+
+.cuenta-top{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+}
+
+.cuenta-top h1{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.cuenta-top p{
+    color: #c2c1c7;
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+.cuenta-top p strong{
+    color: #f3f2ee;
+    font-weight: 500;
+}
+
+.cuenta-salir{
+    color: #171715;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 10px;
+    background-color: #efb810;
+    padding: 8px 16px;
+}
+
+.cuenta-salir:hover{
+    background-color: #efb810;
+    color: #1c1c1a;
+}
+
+.cuenta-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.cuenta-card{
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    background-color: #292925;
+    border: 1px solid #34342f;
+    border-radius: 12px;
+    padding: 22px 20px;
+    min-height: 130px;
+    color: inherit;
+    text-decoration: none;
+}
+
+a.cuenta-card:hover{
+    border-color: #efb810;
+    background-color: #2e2e29;
+}
+
+.cuenta-icono{
+    flex-shrink: 0;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background-color: rgba(239,184,16,.14);
+    color: #efb810;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.cuenta-info h2{
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.cuenta-info p{
+    font-size: 14px;
+    color: #c2c1c7;
+    line-height: 1.45;
+}
+
+.cuenta-card.pronto{
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+.cuenta-card em{
+    font-style: normal;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid #5a5a52;
+    color: #c2c1c7;
+}
+
+.cuenta .alerta{
+    padding: 11px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.cuenta .alerta-ok{
+    color: #b6dcbd;
+}
+
+.cuenta .alerta-error{
+    color: #f2b9a8;
+}
+
+@media (max-width: 960px){
+    .cuenta-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 620px){
+    .cuenta-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .cuenta-top h1{
+        font-size: 26px;
+    }
+}
+
+/* ---------- Tus citas (cliente/index.php) ---------- */
+.cuenta-citas{
+    margin-top: 40px;
+}
+
+.cuenta-citas__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.cuenta-citas__top h2{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.cuenta-citas__agendar{
+    color: #efb810;
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px solid #efb810;
+    border-radius: 10px;
+    padding: 8px 16px;
+}
+
+.cuenta-citas__agendar:hover{
+    background-color: #efb810;
+    color: #1c1c1a;
+}
+
+.cuenta-citas__agendar[hidden]{
+    display: none;
+}
+
+.cuenta-citas__vacio{
+    background-color: #292925;
+    border: 1px solid #34342f;
+    border-radius: 12px;
+    padding: 28px 22px;
+    text-align: center;
+    color: #c2c1c7;
+    font-size: 15px;
+}
+
+.cuenta-citas__vacio[hidden]{
+    display: none;
+}
+
+.cuenta-citas__vacio p{
+    margin-bottom: 14px;
+}
+
+p.cuenta-citas__vacio{
+    margin: 0;
+}
+
+.cuenta-citas__boton{
+    display: inline-block;
+    background-color: #efb810;
+    color: #171715;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 11px 22px;
+}
+
+.cuenta-citas__lista{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cuenta-citas__lista[hidden]{
+    display: none;
+}
+
+.cita{
+    display: grid;
+    grid-template-columns: 130px minmax(0, 1fr) auto;
+    gap: 18px;
+    align-items: center;
+    background-color: #292925;
+    border: 1px solid #34342f;
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+
+.cita__fecha{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.cita__fecha strong{
+    font-size: 16px;
+}
+
+.cita__fecha span{
+    font-size: 14px;
+    color: #efb810;
+}
+
+.cita__info{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.cita__info strong{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.cita__info span{
+    font-size: 14px;
+    color: #c2c1c7;
+    overflow-wrap: anywhere;
+}
+
+.cita__estado{
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 14px;
+    border-radius: 999px;
+    white-space: nowrap;
+    color: #c2c1c7;
+}
+
+.cita__estado--pendiente{
+    color: #efb810;
+}
+
+.cita__estado--confirmada{
+    color: #6f9fc8;
+}
+
+.cita__estado--finalizada{
+    color: #7fb88a;
+}
+
+@media (max-width: 620px){
+    .cita{
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .cita__fecha{
+        grid-column: 1 / -1;
+        flex-direction: row;
+        gap: 10px;
+        align-items: baseline;
+    }
+}

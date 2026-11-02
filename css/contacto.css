@@ -1,0 +1,201 @@
+section{
+    display: flex;
+    justify-content: center;
+    background-color: #171715;
+    padding: 40px 15px;
+}
+
+
+section .menu-informacion{
+    width: 400px;
+    padding-right: 60px;
+}
+
+section .menu-informacion .informacion{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+section .menu-informacion .informacion h3{
+    color: #efb810;
+    font-weight: 500;
+}
+
+section .menu-informacion .informacion span{
+    font-size: 35px;
+    color: #dfedef;
+}
+
+section .menu-informacion .informacion p{
+    color: #c2c1c7;
+}
+
+section .menu-informacion .datos{
+    display: flex;
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section .menu-informacion .datos .info-dato{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+section .menu-informacion .datos .info-dato i{
+    color: #efb810;
+    background-color: #292925;
+    font-size: 20px;
+    width: 80px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+section .menu-informacion .datos .info-dato p{
+    color: #dfedef;
+}
+
+
+section .menu-inputs{
+    width: 600px;
+    background-color: #292925;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+section .menu-inputs .contenedor{
+    display: flex;
+    gap: 20px;
+}
+
+section .menu-inputs .box-input{
+    flex: 1;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+section .menu-inputs .box-input label{
+    color: #c2c1c7;
+}
+
+section .menu-inputs .input-wrap{
+    position: relative;
+    width: 100%;
+}
+
+section .menu-inputs .input-wrap input{
+    width: 100%;
+    font-size: 15px;
+    color: #c2c1c7;
+    border-radius: 10px;
+    padding: 10px 45px 10px 15px;
+    background-color: #1f221d;
+    border: .1px solid #c2c1c7;
+    font-size: 14px;
+    outline: none;
+}
+
+section .menu-inputs .input-wrap button{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: #c2c1c7;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+section .menu-inputs .input-wrap textarea{
+    width: 100%;
+    resize: none;
+    height: 130px;
+    background-color: #1f221d;
+    border-radius: 10px;
+    border: 1px solid #c2c1c7;
+    font-size: 15px;
+    padding: 10px 15px;
+    color: #c2c1c7;
+}
+
+section .menu-inputs .submit-message{
+    background-color: #efb810;
+    padding: 10px;
+    font-size: 18px;
+    color: 292925;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+@media (max-width: 780px){
+    section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 30px 15px;
+    }
+
+    section .menu-informacion{
+        width: 100%;
+        max-width: 400px;
+        padding-right: 0;
+    }
+
+    section .menu-inputs{
+        width: 100%;
+        max-width: 400px;
+        padding: 30px;
+    }
+
+    section .menu-inputs .contenedor{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    section .menu-inputs .box-input{
+        width: 100%;
+    }
+}
+
+/* ===== Formulario funcional (js/contacto.js) ===== */
+.aviso-contacto{
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.aviso-contacto[hidden]{
+    display: none;
+}
+
+.aviso-contacto--ok{
+    border: 1px solid #7fb88a;
+    color: #b6dcbd;
+}
+
+.aviso-contacto--error{
+    border: 1px solid #e07a5f;
+    color: #f2b9a8;
+}
+
+.campo-trampa{
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+section .menu-inputs .submit-message:disabled{
+    opacity: .6;
+    cursor: wait;
+}

@@ -1,0 +1,355 @@
+/* Página "Mis pedidos" (cliente/pedidos.php) · paleta ProFit */
+
+.pedidos {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 70px;
+}
+
+.pedidos__volver {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    color: #efb810;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.pedidos__volver:hover {
+    text-decoration: underline;
+}
+
+.pedidos__titulo {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 6px 0 24px;
+}
+
+.pedidos__cargando {
+    color: #c2c1c7;
+}
+
+.pedidos__cargando[hidden],
+.pedidos__vacio[hidden],
+.pedidos__lista[hidden] {
+    display: none;
+}
+
+/* ---------- Lista ---------- */
+.pedidos__lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.pedido {
+    background: #292925;
+    border: 1px solid #34342f;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* Fila de arriba (clic para abrir/cerrar) */
+.pedido__cabecera {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 22px;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.pedido__cabecera:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.pedido__cabecera:focus-visible {
+    outline: 2px solid #efb810;
+    outline-offset: -2px;
+}
+
+.pedido__izquierda {
+    min-width: 0;
+}
+
+.pedido__linea {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.pedido__numero {
+    font-size: 17px;
+    font-weight: 600;
+    color: #dfedef;
+}
+
+.pedido--abierto .pedido__numero {
+    color: #efb810;
+}
+
+.pedido__fecha {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #c2c1c7;
+}
+
+.pedido__derecha {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+}
+
+.pedido__total {
+    text-align: right;
+}
+
+.pedido__total small {
+    display: block;
+    font-size: 11px;
+    color: #c2c1c7;
+}
+
+.pedido__total strong {
+    font-size: 18px;
+}
+
+.pedido__flecha {
+    color: #c2c1c7;
+    transition: transform 0.2s;
+}
+
+.pedido--abierto .pedido__flecha {
+    transform: rotate(180deg);
+    color: #efb810;
+}
+
+/* ---------- Estados ---------- */
+.estado {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 12px;
+    border-radius: 999px;
+    color: #c2c1c7;
+}
+
+.estado--pendiente {
+    background: rgba(194, 193, 199, 0.15);
+    color: #c2c1c7;
+}
+
+.estado--confirmado {
+    color: #efb810;
+}
+
+.estado--enviado {
+    color: #6f9fc8;
+}
+
+.estado--entregado {
+    color: #7fb88a;
+}
+
+.estado--cancelado {
+    color: #e07a5f;
+}
+
+/* ---------- Detalle (parte que se abre) ---------- */
+.pedido__detalle {
+    border-top: 1px solid #3a3a35;
+    padding: 22px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 22px 40px;
+}
+
+.pedido__detalle[hidden] {
+    display: none;
+}
+
+.pedido__bloque h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.pedido__bloque--ancho {
+    grid-column: 1 / -1;
+}
+
+.pedido__destinatario {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.pedido__texto {
+    font-size: 13px;
+    color: #c2c1c7;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.pedido__fila {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 4px 0;
+    font-size: 13px;
+    color: #c2c1c7;
+}
+
+.pedido__fila--total {
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid #3a3a35;
+    font-size: 14px;
+    font-weight: 600;
+    color: #dfedef;
+}
+
+.pedido__fila--total span:last-child {
+    color: #efb810;
+}
+
+/* ---------- Productos del pedido ---------- */
+.pedido__productos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pedido__producto {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr) auto;
+    gap: 14px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #3a3a35;
+}
+
+.pedido__producto:last-child {
+    border-bottom: none;
+}
+
+.pedido__miniatura {
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    background: #171715;
+    overflow: hidden;
+}
+
+.pedido__miniatura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pedido__producto-nombre {
+    font-size: 14px;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+
+.pedido__producto-cantidad {
+    font-size: 12px;
+    color: #c2c1c7;
+}
+
+.pedido__producto-precio {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ---------- Sin pedidos ---------- */
+.pedidos__vacio {
+    background: #292925;
+    border-radius: 14px;
+    text-align: center;
+    padding: 56px 20px;
+}
+
+.pedidos__vacio i {
+    font-size: 42px;
+    color: #efb810;
+    margin-bottom: 14px;
+}
+
+.pedidos__vacio h2 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.pedidos__vacio p {
+    color: #c2c1c7;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.pedidos__boton {
+    display: inline-block;
+    background: #efb810;
+    color: #171715;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+}
+
+.pedidos__boton:hover {
+    filter: brightness(1.08);
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 640px) {
+    .pedidos__titulo {
+        font-size: 26px;
+    }
+
+    .pedido__cabecera {
+        padding: 16px;
+    }
+
+    .pedido__detalle {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 18px 16px;
+    }
+
+    .pedido__total strong {
+        font-size: 16px;
+    }
+}
+
+/* ---------- Mensaje de error ---------- */
+.pedidos .alerta {
+    padding: 11px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.pedidos .alerta:empty {
+    display: none;
+}
+
+.pedidos .alerta-error {
+    background: rgba(224, 122, 95, 0.12);
+    border: 1px solid rgba(224, 122, 95, 0.5);
+    color: #f2b9a8;
+}

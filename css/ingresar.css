@@ -1,0 +1,102 @@
+body{
+    background-color: #171715;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+}
+
+section{
+    background-color: #292925;
+    text-align: center;
+    border-radius: 10px;  
+    width: 400px;
+    padding: 30px;
+}
+
+section img{
+    width: auto;
+    height: 70px;
+}
+
+section p{
+    color: #c2c1c7;
+    margin: 10px 0 25px 0;
+
+}
+
+section form{
+    display: flex;
+    flex-direction: column;
+}
+
+section form .contenedor{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+section form .contenedor span{
+    margin-bottom: 5px;
+    color: #c2c1c7;
+}
+
+section form .contenedor .flex-inputs .SearchInput{
+    font-size: 15px;
+    color: #c2c1c7;
+    padding: 10px 45px 10px 15px;
+    border-radius: 10px;
+    background-color: #1f221d;
+    flex: 1;
+    border: .1px solid #c2c1c7;
+}
+
+section form .contenedor .flex-inputs{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+section form .contenedor .flex-inputs .ButtonClear, section form div .flex-inputs .ButtonPasswordEye{
+    font-size: 15px;
+    background-color: transparent;
+    color: #c2c1c7;
+    border: none;
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+
+
+section form .contenedor input:focus{
+    outline: none;
+}
+
+section form a{
+    text-align: end;
+    color: #efb810;
+    text-decoration: none;
+}
+
+section form a:hover{
+    text-decoration: underline;
+}
+
+
+
+section form .btn-acceso{
+    background-color: #efb810;
+    padding: 10px;
+    font-size: 18px;
+    color: #292925;
+    border: none ;
+    border-radius: 10px;
+    margin: 20px 0;
+    cursor: pointer;
+} 
+
+

@@ -1,0 +1,4 @@
+# En esta carpeta solo se guardan imágenes: jamás se ejecuta código.
+<FilesMatch "\.(php|phtml|php3|php4|php5|php7|phar|pl|py|cgi|sh)$">
+    Require all denied
+</FilesMatch>
